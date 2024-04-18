@@ -8,7 +8,7 @@ const Button = ({ selectedNumber }) => {
 
 	const handleSubmit = () => {
 		if (selectedNumber !== null) {
-			fetch('/api/saveNumber', {
+			fetch('/api/number', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ const Button = ({ selectedNumber }) => {
 				.then((response) => response.json())
 				.then((data) => {
 					console.log('Success:', data);
-					router.push(`/thankyou/${selectedNumber}`);
+					router.push(`/thankyou`);
 				})
 				.catch((error) => console.error('Error:', error));
 		}
